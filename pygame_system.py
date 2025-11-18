@@ -54,18 +54,18 @@ def main():
         #screen.fill((50, 50, 50))
         #screen.blit(txt, [300, 200])
         #screen.blit(enn, [100, 400])
-        img_rct.move_ip((-1,0))
+        move_lst=[-1,0]
 
         key_lst = pg.key.get_pressed()
         if key_lst[pg.K_UP]:
-            img_rct.move_ip((0,-1))
+            move_lst[1]+=-1
         if key_lst[pg.K_DOWN]:
-            img_rct.move_ip((0,+1))
+            move_lst[1]+=1
         if key_lst[pg.K_LEFT]:
-            img_rct.move_ip((-1,0))
+            move_lst[0]+=-1
         if key_lst[pg.K_RIGHT]:
-            img_rct.move_ip((+2,0))
-        
+            move_lst[0]+=+2
+        img_rct.move_ip(move_lst)
         screen.blit(img,img_rct)
         
         pg.display.update()
